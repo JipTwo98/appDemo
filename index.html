@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMsday</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-items">
+            <button class="task-item" 
+                    onclick="taskManager.addTask('getElement')"
+                    aria-label="Add getElementById example">
+                getElementById
+            </button>
+            <button class="task-item" 
+                    onclick="taskManager.addTask('querySelector')"
+                    aria-label="Add querySelector example">
+                attachFunction
+            </button>
+            <button class="task-item" 
+                    onclick="taskManager.addTask('toggleMenu')"
+                    aria-label="Add menu toggle example">
+                toggleMenu
+            </button>
+            <button class="task-item" 
+                    onclick="taskManager.addTask('hamburgerToggle')"
+                    aria-label="Add hamburger menu example">
+                createAToggleFunction
+            </button>
+        </div>
+        <div class="theme-controls">
+            <button class="control-btn" 
+                    onclick="uiManager.toggleTheme()"
+                    aria-label="Toggle theme">
+                Toggle Theme
+            </button>
+            <button class="control-btn" 
+                    onclick="taskManager.clearAll()"
+                    aria-label="Clear all tasks">
+                Clear All
+            </button>
+        </div>
+    </nav>
+
+    <div class="note-container">
+        <div class="note-wrapper">
+            <div class="note-header">
+                English
+                <div>
+                    <button class="control-btn" 
+                            onclick="uiManager.copyContent('english')"
+                            data-tooltip="Copy instructions to clipboard"
+                            aria-label="Copy instructions">
+                        Copy
+                    </button>
+                    <button class="control-btn" 
+                            onclick="taskManager.undoLast('english')"
+                            data-tooltip="Undo last action"
+                            aria-label="Undo">
+                        Undo
+                    </button>
+                    <button class="control-btn" 
+                            onclick="taskManager.redoLast('english')"
+                            data-tooltip="Redo last action"
+                            aria-label="Redo">
+                        Redo
+                    </button>
+                </div>
+            </div>
+            <div id="englishContent" class="content-area" role="region" aria-label="English instructions"></div>
+        </div>
+        <div class="note-wrapper">
+            <div class="note-header">
+                JavaScript (DOM)
+                <div>
+                    <button class="control-btn" 
+                            onclick="uiManager.copyContent('javascript')"
+                            data-tooltip="Copy code to clipboard"
+                            aria-label="Copy code">
+                        Copy
+                    </button>
+                    
+                </div>
+            </div>
+            <div id="javascriptContent" class="content-area" role="region" aria-label="JavaScript code">
+                <div class="code-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
